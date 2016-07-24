@@ -9,6 +9,8 @@ import {
 /* eslint-disable react/prop-types */
 
 import Icon from 'react-native-vector-icons/Ionicons';
+
+const Chart = require('./SimpleChart.js');
 const styles = require('../styles/ArtistPage.style.js');
 
 let artist = {
@@ -114,6 +116,7 @@ class ArtistPage extends Component {
               <Text style={{ fontWeight: 'bold' }}>COMMENTS</Text>
             </Text>
             <Text style={styles.comments}>#DOPE #OLDSCHOOL #WTF #ILLIN</Text>
+            <Chart />
           </Image>
         </View>
       </View>
