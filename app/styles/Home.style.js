@@ -1,19 +1,12 @@
-'use strict';
-
-import React, { Component } from 'react';
-
 import {
   StyleSheet,
-  Dimensions
+  Dimensions,
 } from 'react-native';
 
 const deviceWidth = Dimensions.get('window').width;
 const deviceHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
-  container: {
-    
-  },
   backgroundImage: {
     flex: 1,
     width: deviceWidth,
@@ -44,14 +37,14 @@ const styles = StyleSheet.create({
     height: deviceWidth,
   },
   button: {
-      height: deviceWidth / 8,
-      width: deviceWidth / 2.3,
-      padding: 10,
-      marginBottom: deviceWidth / 20,
-      borderWidth: 3,
-      borderColor: 'white',
-      borderRadius: 35,
-      alignSelf: 'center',
+    height: deviceWidth / 8,
+    width: deviceWidth / 2.3,
+    padding: 10,
+    marginBottom: deviceWidth / 20,
+    borderWidth: 3,
+    borderColor: 'white',
+    borderRadius: 35,
+    alignSelf: 'center',
   },
   buttonText: {
     fontSize: 18,

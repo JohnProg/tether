@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import {
-  Text,
   View,
   Image,
-  NavigatorIOS,
-  TouchableHighlight
 } from 'react-native';
+
+/* eslint-disable react/prop-types */
 
 const styles = require('../styles/ArtistsMain.style.js');
 const HypeList = require('./HypeList');
@@ -19,27 +18,25 @@ class ArtistsMain extends Component {
       navigator: props.navigator,
     };
   }
-
-
   render() {
     return (
       <Image
         style={styles.backgroundImage}
         source={require('./../images/5_NEARBY_CONCERTS/BG.png')}
       >
-      <View>
-        <View style={styles.container}>
-          <View style={styles.logoContainer}>
-            <Image
-              style={styles.logo}
-              source={require('./../images/0_SIGN_UP/OUTHYPE_LOGO.png')}
-            />
-          </View>
-          <View style={styles.inputs}>
-            <HypeList navigator={this.state.navigator}/>
+        <View>
+          <View style={styles.container}>
+            <View style={styles.logoContainer}>
+              <Image
+                style={styles.logo}
+                source={require('./../images/0_SIGN_UP/OUTHYPE_LOGO.png')}
+              />
+            </View>
+            <View style={styles.inputs}>
+              <HypeList navigator={this.state.navigator} />
+            </View>
           </View>
         </View>
-      </View>
       </Image>
     );
   }

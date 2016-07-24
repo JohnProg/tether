@@ -1,29 +1,25 @@
-'use strict';
-
-import React, { Component } from 'react';
-
 import {
   StyleSheet,
-  Dimensions
+  Dimensions,
 } from 'react-native';
 
 const deviceWidth = Dimensions.get('window').width;
 const deviceHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
-	container: {
-		// flexWrap: 'wrap', 
-		// alignItems: 'flex-start',
-		flexDirection: 'row', 
-		// justifyContent: 'space-around',
-		// padding: 10,
+  container: {
+    // flexWrap: 'wrap',
+    // alignItems: 'flex-start',
+    flexDirection: 'row',
+    // justifyContent: 'space-around',
+    // padding: 10,
     width: deviceWidth,
-	},
-	logoContainer: {
-		width: deviceWidth,
-		alignItems: 'center',
-		marginTop: deviceHeight / 4,
-		marginBottom: deviceHeight / 80,
+  },
+  logoContainer: {
+    width: deviceWidth,
+    alignItems: 'center',
+    marginTop: deviceHeight / 4,
+    marginBottom: deviceHeight / 80,
   },
   textContainer: {
     width: deviceWidth / 2,
@@ -39,13 +35,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   icon: {
-  	color: 'white',
-  	fontSize: 30,
+    color: 'white',
+    fontSize: 30,
   },
   title: {
     fontSize: 25,
     fontWeight: 'bold',
-  	color: 'white',
+    color: 'white',
   },
   subtitle: {
     color: 'white',
@@ -54,13 +50,13 @@ const styles = StyleSheet.create({
     width: deviceWidth / 1.2,
     alignSelf: 'center',
     height: deviceHeight / 1.5,
-    shadowColor: "#000000",
+    shadowColor: '#000000',
     shadowOpacity: 0.8,
     shadowRadius: 2,
     shadowOffset: {
       height: 1,
-      width: 0
-    }
+      width: 0,
+    },
   },
 });
 

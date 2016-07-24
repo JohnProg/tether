@@ -1,16 +1,21 @@
 
 // import App from './app/components/App';
 
-import React, { Component } from 'react';
+import React from 'react';
 import {
   AppRegistry,
   StyleSheet,
-  Text,
-  View,
-  NavigatorIOS
+  NavigatorIOS,
 } from 'react-native';
 
 const Home = require('./app/components/Home');
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#F5FCFF',
+  },
+});
 
 const tether = () => (
   <NavigatorIOS
@@ -19,16 +24,8 @@ const tether = () => (
       title: 'Home',
       component: Home,
     }}
-    navigationBarHidden={true}
+    navigationBarHidden
   />
 );
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F5FCFF',
-  }
-});
 
 AppRegistry.registerComponent('tether', () => tether);
