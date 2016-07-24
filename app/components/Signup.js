@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet,
   Text,
   View,
   NavigatorIOS,
-  Dimensions,
   TouchableHighlight
 } from 'react-native';
 
-const deviceWidth = Dimensions.get('window').width;
-const deviceHeight = Dimensions.get('window').height;
+const styles = require('../styles/Signup.style.js');
 
 class Signup extends Component {
 
@@ -35,17 +32,5 @@ class Signup extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-	container: {
-		 
-	},
-	logoContainer: {
-		width: deviceWidth,
-		alignItems: 'center',
-		marginTop: deviceHeight / 4,
-		marginBottom: deviceHeight / 80,
-  },
-});
 
 module.exports = Signup;
