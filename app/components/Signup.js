@@ -24,7 +24,7 @@ class Signup extends Component {
     AlertIOS.prompt('Enter your name', null, () =>{
       this.props.navigator.push({
         title: 'Artist Main',
-        component: ArtistsMain,
+        component: TabMain,
         passProps: { navigator: this.props.navigator },
       });
     });  

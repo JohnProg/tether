@@ -24,9 +24,16 @@ const styles = StyleSheet.create({
     width: deviceWidth / 4,
     height: deviceWidth / 12,
   },
-  inputs: {
-    backgroundColor: 'rgba(0,0,0,0)',
-  }
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+  },
+  chart: {
+    width: 200,
+    height: 200,
+  },
 });
 
 module.exports = styles;

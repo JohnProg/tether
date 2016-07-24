@@ -9,6 +9,8 @@ import {
 /* eslint-disable react/prop-types */
 
 import Icon from 'react-native-vector-icons/Ionicons';
+
+// const Chart = require('./SimpleChart.js');
 const styles = require('../styles/ArtistPage.style.js');
 
 let artist = {

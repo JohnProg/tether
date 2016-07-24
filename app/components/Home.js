@@ -28,7 +28,7 @@ class Home extends Component {
           if (responseData.userInfo && responseData.userInfo.newUser === false) {
             this.props.navigator.push({
               title: 'Artists Main',
-              component: ArtistsMain,
+              component: TabMain,
               passProps: { navigator: this.props.navigator },
             });
           } else {
