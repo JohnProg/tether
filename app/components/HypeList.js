@@ -15,6 +15,8 @@ const styles = require('../styles/HypeList.style.js');
 
 const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
+let schedule;
+
 const colors = ['rgb(149, 27, 245)', 'rgb(255, 0, 205)', 'rgb(131, 139, 186)', 'rgb(193, 14, 216)', 'rgb(0, 209, 186)'];
 
 class HypeList extends Component {
@@ -24,13 +26,29 @@ class HypeList extends Component {
       ds: null,
       loaded: false
     }
+    this.updateInformation = this.updateInformation.bind(this);
   }
   componentDidMount(){
-    fetch('http://107.170.231.229:8000/getAllEvents').then((response) => {
-      const schedule = JSON.parse(response._bodyInit).events;
+    this.updateInformation();
+  }
+  componentWillReceiveProps() { 
+   this.setState();
+ }
+  updateInformation(){
+    console.log('update info');
+    fetch('http://107.170.231.229:8000/getAllEvents?day=1').then((response) => {
+      schedule = JSON.parse(response._bodyInit).events.sort((a, b) =>{
+          if (a.hypes > b.hypes) {
+              return -1;
+            }
+            if (a.hypes < b.hypes) {
+              return 1;
+            }
+            // a must be equal to b
+            return 0;
+      });
       this.setState({ ds: ds.cloneWithRows(schedule) , loaded: true});
-      console.log(this.state.schedule);
-    }).done()
+    }).then((response) => { this.render()}).done()
   }
   generateColor(){
     return colors[Math.floor(Math.random() * colors.length)];
@@ -46,7 +64,7 @@ class HypeList extends Component {
       return(
         <View style={styles.list}>
           <ListView style={styles.list} dataSource={this.state.ds}
-      renderRow={(rowData) => <Tile name={rowData.name} location={rowData.location} id={rowData.id} hypes={rowData.hypes} color={this.generateColor()} startTime={rowData.start_time} endTime={rowData.end_time} description={rowData.description} />} />
+      renderRow={(rowData) => <Tile name={rowData.name} location={rowData.location} id={rowData.id} hypes={rowData.hypes} color={this.generateColor()} startTime={rowData.start_time} endTime={rowData.end_time} description={rowData.description} updateFn={this.updateInformation}/>} />
       </View>
   		);
     }
