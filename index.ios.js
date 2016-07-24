@@ -19,10 +19,10 @@ const tether = () => (
       title: 'Home',
       component: Home,
     }}
+    navigationBarHidden={true}
   />
 );
 
-// navigationBarHidden={true}
 
 const styles = StyleSheet.create({
   container: {
