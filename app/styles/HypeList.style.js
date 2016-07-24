@@ -1,19 +1,15 @@
-'use strict';
-
-import React, { Component } from 'react';
-
 import {
   StyleSheet,
-  Dimensions
+  // Dimensions,
 } from 'react-native';
 
-const deviceWidth = Dimensions.get('window').width;
-const deviceHeight = Dimensions.get('window').height;
+// const deviceWidth = Dimensions.get('window').width;
+// const deviceHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
-	list: {
-    height: 600
-	}
+  list: {
+    height: 600,
+  },
 });
 
 module.exports = styles;

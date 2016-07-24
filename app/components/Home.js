@@ -3,30 +3,41 @@ import {
   Text,
   View,
   Image,
-  NavigatorIOS,
-  TouchableHighlight
+  TouchableHighlight,
 } from 'react-native';
 
 const styles = require('../styles/Home.style.js');
 const Signup = require('./Signup');
-const Login = require('./Login');
+const TabMain = require('./TabMain.js');
+const DeviceInfo = require('react-native-device-info');
+
+/* eslint-disable react/prop-types */
 
 class Home extends Component {
 
-  handleTetherin() {
-    this.props.navigator.push({
-      title: 'Login',
-      component: Login,
-      passProps: { navigator: this.props.navigator },
-    });
+  constructor(props) {
+    super(props);
+    this.handleTetherin = this.handleTetherin.bind(this);
   }
 
-  handleSignup() {
-    this.props.navigator.push({
-      title: 'Sign Up',
-      component: Signup,
-      passProps: { navigator: this.props.navigator },
-    });
+  handleTetherin() {
+    fetch(`http://107.170.231.229:8000/validation?deviceId=${DeviceInfo.getUniqueID()}`)
+      .then(response => response.json())
+        .then(responseData => {
+          if (responseData.userInfo.newUser === false) {
+            this.props.navigator.push({
+              title: 'Tab Main',
+              component: TabMain,
+              passProps: { navigator: this.props.navigator },
+            });
+          } else {
+            this.props.navigator.push({
+              title: 'Login',
+              component: Signup,
+              passProps: { navigator: this.props.navigator },
+            });
+          }
+        });
   }
 
   render() {
@@ -35,30 +46,31 @@ class Home extends Component {
         style={styles.backgroundImage}
         source={require('./../images/0_SIGN_UP/background.png')}
       >
-      <View>
-        <View style={styles.container}>
-          <View style={styles.logoContainer}>
-            <Image
-              style={styles.logo}
-              source={require('./../images/0_SIGN_UP/OUTHYPE_LOGO.png')}
-            />
-          </View>
-          <View style={styles.xContainer}>
-            <Image
-              style={styles.xlogo}
-              source={require('./../images/0_SIGN_UP/BIG_X_IMAGERY.png')}
-            />
-          </View>          
-          <View style={styles.inputs}>
-            <TouchableHighlight onPress={this.handleSignup.bind(this)} style={styles.button} underlayColor="transparent">
-              <Text style={styles.buttonText}>Sign Up</Text>
-            </TouchableHighlight>
-            <TouchableHighlight onPress={this.handleTetherin.bind(this)} style={styles.button} underlayColor="transparent">
-              <Text style={styles.buttonText}>Tune In</Text>
-            </TouchableHighlight>
+        <View>
+          <View style={styles.container}>
+            <View style={styles.logoContainer}>
+              <Image
+                style={styles.logo}
+                source={require('./../images/0_SIGN_UP/OUTHYPE_LOGO.png')}
+              />
+            </View>
+            <View style={styles.xContainer}>
+              <Image
+                style={styles.xlogo}
+                source={require('./../images/0_SIGN_UP/BIG_X_IMAGERY.png')}
+              />
+            </View>
+            <View style={styles.inputs}>
+              <TouchableHighlight
+                onPress={this.handleTetherin}
+                style={styles.button}
+                underlayColor="transparent"
+              >
+                <Text style={styles.buttonText}>Tune In</Text>
+              </TouchableHighlight>
+            </View>
           </View>
         </View>
-      </View>
       </Image>
     );
   }
