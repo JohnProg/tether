@@ -6,6 +6,7 @@ import {
   NavigatorIOS,
   TouchableHighlight,
   Image,
+  ListView
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -29,14 +30,19 @@ class Tile extends Component {
   }
   upVote(){
   	console.log('woot', this.state.id);
-    fetch('http://107.170.231.229:8000/hypeCountPost', {
+    fetch('http://107.170.231.229:8000/hypecount', {
       'method': 'POST',
       'body': JSON.stringify({
         Hypee: this.state.id,
         timestamp: Date.now()
-      })
+      }), 
+      headers: {
+   'Accept': 'application/json',
+   'Content-Type': 'application/json',
+ },
     }).then((response) => {
       	console.log('upvoted!');
+      	this.props.updateFn();
     })
   }
   render(){
