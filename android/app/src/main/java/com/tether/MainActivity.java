@@ -1,6 +1,7 @@
 package com.tether;
 
 import com.facebook.react.ReactActivity;
+import com.learnium.RNDeviceInfo.RNDeviceInfo;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.reactnativenavigation.RnnPackage;
 

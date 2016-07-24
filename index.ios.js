@@ -11,7 +11,8 @@ import {
 } from 'react-native';
 
 const Home = require('./app/components/Home');
-
+var DeviceInfo = require('react-native-device-info');
+console.error("Device Unique ID", DeviceInfo.getUniqueID());
 const tether = () => (
   <NavigatorIOS
     style={styles.container}
