@@ -100,6 +100,18 @@ class TabMain extends Component {
           }}>
           {this.renderDrinksView()}
         </Icon.TabBarItem>
+        <Icon.TabBarItem
+          title="Profile"
+          selected={this.state.selectedTab === 'profile'}
+          iconName={'map'}
+          iconSize={20}
+          onPress={() => {
+              this.setState({
+                selectedTab: 'profile'
+              });
+          }}>
+          {this.renderDrinksView()}
+        </Icon.TabBarItem>
       </TabBarIOS>
       )
   }

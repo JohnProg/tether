@@ -10,11 +10,7 @@ import {
 const deviceWidth = Dimensions.get('window').width;
 const deviceHeight = Dimensions.get('window').height;
 
-
 const styles = StyleSheet.create({
-	container: {
-		 
-	},
 	backgroundImage: {
 	  flex: 1,
 	  width: deviceWidth,
@@ -23,18 +19,15 @@ const styles = StyleSheet.create({
 	logoContainer: {
 	  width: deviceWidth,
 	  height: deviceHeight / 5,
-	  alignItems: 'center',
-	  justifyContent: 'center',
 	  marginTop: deviceHeight / 60,
 	  marginBottom: deviceHeight / 30,
 	},
 	logo: {
-	  width: deviceWidth / 2.5,
-	  height: deviceWidth / 7.5,
+	  marginTop: deviceHeight / 40,
+	  marginLeft: deviceWidth / 25,
+	  width: deviceWidth / 4,
+	  height: deviceWidth / 12,
 	},
 });
 
-
 module.exports = styles;
-
-

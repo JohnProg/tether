@@ -12,28 +12,53 @@ const deviceHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
-  	
+    
+  },
+  backgroundImage: {
+    flex: 1,
+    width: deviceWidth,
+    height: deviceHeight,
   },
   logoContainer: {
     width: deviceWidth,
+    height: deviceHeight / 5,
     alignItems: 'center',
-    marginTop: deviceHeight / 4,
-    marginBottom: deviceHeight / 80,
+    justifyContent: 'center',
+    marginTop: deviceHeight / 60,
+    marginBottom: deviceHeight / 30,
+  },
+  logo: {
+    width: deviceWidth / 2.5,
+    height: deviceWidth / 7.5,
+  },
+  xContainer: {
+    width: deviceWidth,
+    height: deviceWidth,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: -deviceHeight / 8,
+    // marginBottom: deviceHeight / 30,
+  },
+  xlogo: {
+    width: deviceWidth,
+    height: deviceWidth,
   },
   button: {
-    height: deviceHeight / 20,
-    width: deviceWidth / 2,
-    flexDirection: 'row',
-    backgroundColor: '#FF9334',
-    marginBottom: deviceHeight / 80,
-    alignSelf: 'center',
-    justifyContent: 'center',
-    borderRadius: 4,
+      height: deviceWidth / 8,
+      width: deviceWidth / 2.3,
+      padding: 10,
+      marginBottom: deviceWidth / 20,
+      borderWidth: 3,
+      borderColor: 'white',
+      borderRadius: 35,
+      alignSelf: 'center',
   },
   buttonText: {
-    fontSize: 16,
+    fontSize: 18,
+    fontWeight: 'bold',
     color: 'white',
     alignSelf: 'center',
+    justifyContent: 'center',
   },
 });
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   Text,
   View,
+  Image,
   NavigatorIOS,
   TouchableHighlight
 } from 'react-native';
@@ -30,21 +31,35 @@ class Home extends Component {
 
   render() {
     return (
+      <Image
+        style={styles.backgroundImage}
+        source={require('./../images/0_SIGN_UP/background.png')}
+      >
       <View>
         <View style={styles.container}>
           <View style={styles.logoContainer}>
-            <Text>Tether</Text>
+            <Image
+              style={styles.logo}
+              source={require('./../images/0_SIGN_UP/OUTHYPE_LOGO.png')}
+            />
           </View>
+          <View style={styles.xContainer}>
+            <Image
+              style={styles.xlogo}
+              source={require('./../images/0_SIGN_UP/BIG_X_IMAGERY.png')}
+            />
+          </View>          
           <View style={styles.inputs}>
-            <TouchableHighlight onPress={this.handleSignup.bind(this)} style={styles.button}>
+            <TouchableHighlight onPress={this.handleSignup.bind(this)} style={styles.button} underlayColor="transparent">
               <Text style={styles.buttonText}>Sign Up</Text>
             </TouchableHighlight>
-            <TouchableHighlight onPress={this.handleTetherin.bind(this)} style={styles.button}>
-              <Text style={styles.buttonText}>Login</Text>
+            <TouchableHighlight onPress={this.handleTetherin.bind(this)} style={styles.button} underlayColor="transparent">
+              <Text style={styles.buttonText}>Tune In</Text>
             </TouchableHighlight>
           </View>
         </View>
       </View>
+      </Image>
     );
   }
 }
