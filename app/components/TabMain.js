@@ -37,7 +37,7 @@ class TabMain extends Component {
 
   renderArtistsView() {
     return (
-      <ArtistsMain
+      <FoodMain
         style={styles.container}
         ref="artistRef"
         navigator={this.props.navigator}
@@ -47,7 +47,7 @@ class TabMain extends Component {
 
   renderFoodView() {
     return (
-      <FoodMain
+      <ArtistsMain
         style={styles.container}
         ref="foodRef"
         navigator={this.props.navigator}
@@ -79,9 +79,9 @@ class TabMain extends Component {
     return (
       <TabBarIOS>
         <Icon.TabBarItem
-          title="Artists"
+          title="Current"
           selected={this.state.selectedTab === 'artists'}
-          iconName={'home'}
+          iconName={'ticket'}
           iconSize={25}
           onPress={() => {
             this.setState({
@@ -92,9 +92,9 @@ class TabMain extends Component {
           {this.renderArtistsView()}
         </Icon.TabBarItem>
         <Icon.TabBarItem
-          title="Food"
+          title="All"
           selected={this.state.selectedTab === 'food'}
-          iconName={'camera'}
+          iconName={'book'}
           iconSize={20}
           onPress={() => {
             this.setState({
@@ -103,32 +103,6 @@ class TabMain extends Component {
           }}
         >
           {this.renderFoodView()}
-        </Icon.TabBarItem>
-        <Icon.TabBarItem
-          title="Drinks"
-          selected={this.state.selectedTab === 'drinks'}
-          iconName={'map'}
-          iconSize={20}
-          onPress={() => {
-            this.setState({
-              selectedTab: 'drinks',
-            });
-          }}
-        >
-          {this.renderDrinksView()}
-        </Icon.TabBarItem>
-        <Icon.TabBarItem
-          title="Profile"
-          selected={this.state.selectedTab === 'profile'}
-          iconName={'map'}
-          iconSize={20}
-          onPress={() => {
-            this.setState({
-              selectedTab: 'profile',
-            });
-          }}
-        >
-          {this.renderTest()}
         </Icon.TabBarItem>
       </TabBarIOS>
       );

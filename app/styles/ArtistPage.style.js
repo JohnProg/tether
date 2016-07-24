@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     height: deviceHeight / 2,
     borderColor: 'black',
     borderWidth: 0.5,
+    backgroundColor: 'rgba(0,0,0,0)',
   },
   logoContainer: {
     width: deviceWidth,
@@ -39,6 +40,7 @@ const styles = StyleSheet.create({
     marginLeft: deviceWidth / 25,
     width: deviceWidth / 4,
     height: deviceWidth / 12,
+    backgroundColor: 'rgba(0,0,0,0.2)',
   },
   whiteContainer: {
     width: deviceWidth,
@@ -58,7 +60,7 @@ const styles = StyleSheet.create({
     color: 'white',
     alignSelf: 'center',
     justifyContent: 'center',
-    backgroundColor: 'rgba(0,0,0,0)',
+    backgroundColor: 'rgba(0,0,0,0.2)',
     shadowColor: '#000000',
     shadowOpacity: 0.8,
     shadowRadius: 2,
@@ -73,7 +75,7 @@ const styles = StyleSheet.create({
     color: 'white',
     alignSelf: 'center',
     justifyContent: 'center',
-    backgroundColor: 'rgba(0,0,0,0)',
+    backgroundColor: 'rgba(0,0,0,0.2)',
     shadowColor: '#000000',
     shadowOpacity: 0.8,
     shadowRadius: 2,

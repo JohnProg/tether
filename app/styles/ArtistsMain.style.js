@@ -24,6 +24,9 @@ const styles = StyleSheet.create({
     width: deviceWidth / 4,
     height: deviceWidth / 12,
   },
+  inputs: {
+    backgroundColor: 'rgba(0,0,0,0)',
+  }
 });
 
 module.exports = styles;
