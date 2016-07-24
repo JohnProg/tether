@@ -9,8 +9,9 @@ import {
 } from 'react-native';
 
 const Tile = require('./Tile');
+const styles = require('../styles/Tile.style.js');
 
-const styles = require('../styles/HypeList.style.js');
+// const styles = require('../styles/HypeList.style.js');
 
 
 const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
@@ -24,7 +25,8 @@ class HypeList extends Component {
     super(props);
     this.state = {
       ds: null,
-      loaded: false
+      loaded: false,
+      navigator: props.navigator,
     }
     this.updateInformation = this.updateInformation.bind(this);
   }
@@ -62,9 +64,9 @@ class HypeList extends Component {
       )
     } else{
       return(
-        <View style={styles.list}>
-          <ListView style={styles.list} dataSource={this.state.ds}
-      renderRow={(rowData) => <Tile name={rowData.name} location={rowData.location} id={rowData.id} hypes={rowData.hypes} color={this.generateColor()} startTime={rowData.start_time} endTime={rowData.end_time} description={rowData.description} updateFn={this.updateInformation}/>} />
+        <View style={styles.listContainer}>
+          <ListView contentContainerStyle={styles.listView} dataSource={this.state.ds}
+      renderRow={(rowData) => <Tile navigator={this.state.navigator} name={rowData.name} location={rowData.location} id={rowData.id} hypes={rowData.hypes} color={this.generateColor()} startTime={rowData.start_time} endTime={rowData.end_time} description={rowData.description} updateFn={this.updateInformation}/>} />
       </View>
   		);
     }

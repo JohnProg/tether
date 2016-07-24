@@ -32,7 +32,6 @@ class DrinksMain extends Component {
               style={styles.logo}
               source={require('./../images/0_SIGN_UP/OUTHYPE_LOGO.png')}
             />
-            <Text>Drinks</Text>
           </View>
           <View style={styles.inputs}>
             <HypeList />

@@ -11,6 +11,7 @@ import {
 
 import Icon from 'react-native-vector-icons/Ionicons';
 const styles = require('../styles/Tile.style.js');
+const ArtistPage = require('./ArtistPage.js');
 
 class Tile extends Component {
   constructor(props){
@@ -23,10 +24,12 @@ class Tile extends Component {
     	hypes: this.props.hypes,
     	startTime: this.props.startTime,
     	endTime: this.props.endTime,
-    	description: this.props.description
+    	description: this.props.description,
+      navigator: props.navigator,
     }
     console.log(this.state.id);
     this.upVote = this.upVote.bind(this);
+    this.goToArtistPage = this.goToArtistPage.bind(this);
   }
   upVote(){
   	console.log('woot', this.state.id);
@@ -45,32 +48,37 @@ class Tile extends Component {
       	this.props.updateFn();
     })
   }
+  
+  goToArtistPage() {
+
+    this.props.navigator.push({
+      title: 'Artist',
+      component: ArtistPage,
+      passProps: { navigator: this.props.navigator },
+    });
+
+  }
+
   render(){
   	return (
 			<View>
-			  <View style={styles.container, {backgroundColor: this.state.color}}>
-			    <View>
-		        <Text style={styles.text}>Act: {this.state.name}</Text>
-		        <Text style={styles.text}>Location: {this.state.location}</Text>
-		        <Text style={styles.text}>Start Time: {this.state.startTime}</Text>
-		        <Text style={styles.text}>End Time: {this.state.endTime}</Text>
-		        <Text style={styles.text}>Hype Number: {this.state.hypes}</Text>
+			  <View style={styles.container, {backgroundColor: this.state.color, flexDirection: 'row'}}>
+			    <View style={styles.textContainer}>
+		        <Text style={styles.title}>{this.state.name}</Text>
+		        <Text style={styles.subtitle}>{this.state.location} | {this.state.startTime}</Text>
+            <Text style={styles.subtitle}>{this.state.hypes} Hypes</Text>
 		      </View>
-		      <View style={styles.container}>
-			      <View>
-			        <TouchableHighlight onPress={this.upVote}>
-			          <Icon name="ios-thumbs-up" style={styles.icon}/>
-			        </TouchableHighlight>
-			      </View>
-			      <Text>    </Text>
-			      <View>
-			        <TouchableHighlight>
-			          <Icon name="ios-chatbubbles" style={styles.icon}/>
-			        </TouchableHighlight>
-			      </View>
+		      <View style={styles.iconContainer}>
+		        <TouchableHighlight onPress={this.upVote} underlayColor='transparent'>
+		          <Icon name="ios-thumbs-up" style={styles.icon}/>
+		        </TouchableHighlight>
+		      </View>
+		      <View style={styles.iconContainer}>
+		        <TouchableHighlight onPress={this.goToArtistPage} underlayColor='transparent'>
+		          <Icon name="ios-help-circle" style={styles.icon}/>
+		        </TouchableHighlight>
 		      </View>
 		    </View>
-		    <View style={styles.hr}/>
 		  </View>
 	  )
   }

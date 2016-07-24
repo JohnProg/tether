@@ -12,11 +12,12 @@ const deviceHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
 	container: {
-		flexWrap: 'wrap', 
-		alignItems: 'flex-start',
-		flexDirection:'row', 
-		justifyContent: 'space-around',
-		padding: 10,
+		// flexWrap: 'wrap', 
+		// alignItems: 'flex-start',
+		flexDirection: 'row', 
+		// justifyContent: 'space-around',
+		// padding: 10,
+    width: deviceWidth,
 	},
 	logoContainer: {
 		width: deviceWidth,
@@ -24,22 +25,43 @@ const styles = StyleSheet.create({
 		marginTop: deviceHeight / 4,
 		marginBottom: deviceHeight / 80,
   },
-  hr: {
-    backgroundColor: 'rgba(0, 0, 0, 0.4)',
-    height: 1,
-    marginLeft: 0,
-    marginRight: 0,
+  textContainer: {
+    width: deviceWidth / 2,
+    padding: deviceWidth / 40,
+    // borderColor: 'white',
+    // borderWidth: 0.5,
+  },
+  iconContainer: {
+    width: deviceWidth / 6,
+    // borderColor: 'white',
+    // borderWidth: 0.5,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   icon: {
   	color: 'white',
-  	fontSize: 40,
-  	flexWrap: 'wrap', 
-    alignItems: 'flex-start',
-    flexDirection:'row',
+  	fontSize: 30,
   },
-  text: {
+  title: {
+    fontSize: 25,
+    fontWeight: 'bold',
   	color: 'white',
-  }
+  },
+  subtitle: {
+    color: 'white',
+  },
+  listContainer: {
+    width: deviceWidth / 1.2,
+    alignSelf: 'center',
+    height: deviceHeight / 1.5,
+    shadowColor: "#000000",
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    shadowOffset: {
+      height: 1,
+      width: 0
+    }
+  },
 });
 
 module.exports = styles;

@@ -17,6 +17,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import ArtistsMain from './ArtistsMain.js'
 import FoodMain from './FoodMain.js'
 import DrinksMain from './DrinksMain.js'
+import ArtistPage from './ArtistPage.js'
 
 var deviceWidth = Dimensions.get('window').width;
 var deviceHeight = Dimensions.get('window').height;
@@ -59,6 +60,15 @@ class TabMain extends Component {
         ref='drinksRef'
         navigator={this.props.navigator}/>
     )
+  }
+
+  renderTest() {
+    return (
+      <ArtistPage
+        style={styles.container}
+        ref='testRef'
+        navigator={this.props.navigator}/>
+    );
   }
 
   render() {
@@ -110,7 +120,7 @@ class TabMain extends Component {
                 selectedTab: 'profile'
               });
           }}>
-          {this.renderDrinksView()}
+          {this.renderTest()}
         </Icon.TabBarItem>
       </TabBarIOS>
       )
