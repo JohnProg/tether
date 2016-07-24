@@ -7,12 +7,8 @@ import {
   TouchableHighlight
 } from 'react-native';
 
-<<<<<<< 1944ee387c776755e5871f8f5573f2817e9c3017
 const styles = require('../styles/DrinksMain.style.js');
-=======
-const styles = require('../styles/Login.style.js');
 const HypeList = require('./HypeList');
->>>>>>> Start Implement Upvote Page
 
 class DrinksMain extends Component {
 
