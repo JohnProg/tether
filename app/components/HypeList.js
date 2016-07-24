@@ -66,7 +66,7 @@ class HypeList extends Component {
       return(
         <View style={styles.listContainer}>
           <ListView contentContainerStyle={styles.listView} dataSource={this.state.ds}
-      renderRow={(rowData) => <Tile name={rowData.name} location={rowData.location} id={rowData.id} hypes={rowData.hypes} color={this.generateColor()} startTime={rowData.start_time} endTime={rowData.end_time} description={rowData.description} updateFn={this.updateInformation}/>} />
+      renderRow={(rowData) => <Tile navigator={this.state.navigator} name={rowData.name} location={rowData.location} id={rowData.id} hypes={rowData.hypes} color={this.generateColor()} startTime={rowData.start_time} endTime={rowData.end_time} description={rowData.description} updateFn={this.updateInformation}/>} />
       </View>
   		);
     }

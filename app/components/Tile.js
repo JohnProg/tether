@@ -65,7 +65,8 @@ class Tile extends Component {
 			  <View style={styles.container, {backgroundColor: this.state.color, flexDirection: 'row'}}>
 			    <View style={styles.textContainer}>
 		        <Text style={styles.title}>{this.state.name}</Text>
-		        <Text style={styles.subtitle}>{this.state.location} | {this.state.startTime} | {this.state.hypes} Hypes</Text>
+		        <Text style={styles.subtitle}>{this.state.location} | {this.state.startTime}</Text>
+            <Text style={styles.subtitle}>{this.state.hypes} Hypes</Text>
 		      </View>
 		      <View style={styles.iconContainer}>
 		        <TouchableHighlight onPress={this.upVote} underlayColor='transparent'>

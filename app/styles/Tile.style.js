@@ -52,7 +52,15 @@ const styles = StyleSheet.create({
   },
   listContainer: {
     width: deviceWidth / 1.2,
-    alignSelf: 'center'
+    alignSelf: 'center',
+    height: deviceHeight / 1.5,
+    shadowColor: "#000000",
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    shadowOffset: {
+      height: 1,
+      width: 0
+    }
   },
 });
 
