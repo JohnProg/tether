@@ -37,6 +37,12 @@ class ArtistPage extends Component {
 	        style={styles.artistImage}
 	        source={{uri: artist.image}}
 	      >
+          <View style={styles.logoContainer}>
+            <Image
+              style={styles.logo}
+              source={require('./../images/0_SIGN_UP/OUTHYPE_LOGO.png')}
+            />
+          </View>
           <Text style={styles.artistName}>{artist.name}</Text>
           <Text style={styles.artistAlbum}>{artist.album}</Text>
         </Image>

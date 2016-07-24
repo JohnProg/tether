@@ -25,9 +25,9 @@ const styles = StyleSheet.create({
 	},
 	logoContainer: {
 	  width: deviceWidth,
-	  height: deviceHeight / 5,
+	  height: deviceHeight / 5.5,
 	  marginTop: deviceHeight / 60,
-	  marginBottom: deviceHeight / 30,
+	  // marginBottom: deviceHeight / 100,
 	},
 	logo: {
 	  marginTop: deviceHeight / 40,
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
 	  height: deviceHeight / 1.2,
 	},
 	artistName: {
-	  marginTop: deviceHeight / 4.5,
+	  // marginTop: deviceHeight / 100,
 	  fontSize: 45,
 	  fontWeight: 'bold',
 	  color: 'white',
