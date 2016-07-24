@@ -15,12 +15,23 @@ const styles = StyleSheet.create({
 	container: {
 		 
 	},
+	backgroundImage: {
+	  flex: 1,
+	  width: deviceWidth,
+	  height: deviceHeight,
+	},
 	logoContainer: {
-		width: deviceWidth,
-		alignItems: 'center',
-		marginTop: deviceHeight / 4,
-		marginBottom: deviceHeight / 80,
-  },
+	  width: deviceWidth,
+	  height: deviceHeight / 5,
+	  alignItems: 'center',
+	  justifyContent: 'center',
+	  marginTop: deviceHeight / 60,
+	  marginBottom: deviceHeight / 30,
+	},
+	logo: {
+	  width: deviceWidth / 2.5,
+	  height: deviceWidth / 7.5,
+	},
 });
 
 

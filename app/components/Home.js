@@ -50,10 +50,10 @@ class Home extends Component {
             />
           </View>          
           <View style={styles.inputs}>
-            <TouchableHighlight onPress={this.handleSignup.bind(this)} style={styles.button}>
+            <TouchableHighlight onPress={this.handleSignup.bind(this)} style={styles.button} underlayColor="transparent">
               <Text style={styles.buttonText}>Sign Up</Text>
             </TouchableHighlight>
-            <TouchableHighlight onPress={this.handleTetherin.bind(this)} style={styles.button}>
+            <TouchableHighlight onPress={this.handleTetherin.bind(this)} style={styles.button} underlayColor="transparent">
               <Text style={styles.buttonText}>Tune In</Text>
             </TouchableHighlight>
           </View>
