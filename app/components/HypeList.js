@@ -50,15 +50,13 @@ class HypeList extends Component {
         // a must be equal to b
         return 0;
       });
-      this.setState({ ds: ds.cloneWithRows(schedule), loaded: true });
+      this.setState({ ds: ds.cloneWithRows(schedule), loaded: false });
+      setTimeout(() => this.setState({ loaded: true }, 0));
     }).done();
   }
 
   hotReload() {
-    this.setState({
-      loaded: false,
-    });
-    setTimeout(() => this.setState({ loaded: true }, 0));
+    this.updateInformation();
   }
 
   generateColor() {

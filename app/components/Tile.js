@@ -29,12 +29,16 @@ class Tile extends Component {
   }
 
   upVote() {
-    fetch('http://107.170.231.229:8000/hypeCountPost', {
+    fetch('http://107.170.231.229:8000/hypeCount', {
       method: 'POST',
       body: JSON.stringify({
         Hypee: this.state.id,
         timestamp: Date.now(),
       }),
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
     }).then(() => {
       this.props.reload();
     });

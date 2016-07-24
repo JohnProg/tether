@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
 });
+
 const tether = () => (
   <NavigatorIOS
     style={styles.container}
