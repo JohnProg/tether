@@ -5,6 +5,7 @@ import {
   Image,
   TextInput,
   TouchableHighlight,
+  AlertIOS,
 } from 'react-native';
 /* eslint-disable react/prop-types */
 const styles = require('../styles/Signup.style.js');
@@ -20,11 +21,15 @@ class Signup extends Component {
   }
 
   handleGetHyped() {
-    this.props.navigator.push({
-      title: 'Tab Main',
-      component: TabMain,
-      passProps: { navigator: this.props.navigator },
-    });
+    if (this.refs.username.value == null) {
+      AlertIOS.alert('Please type in a name');  
+    } else {
+      this.props.navigator.push({
+        title: 'Tab Main',
+        component: TabMain,
+        passProps: { navigator: this.props.navigator },
+      });
+    }
   }
 
   render() {
@@ -64,26 +69,11 @@ class Signup extends Component {
               <Text style={styles.subtitle}>For everyone and their mothers</Text>
               <View style={styles.inputBox}>
                 <TextInput
-                  style={styles.submit}
+                  style={styles.textUsername}
+                  ref="username"
                   placeholder="username"
                   placeholderTextColor="black"
                   value={this.state.username}
-                />
-              </View>
-              <View style={styles.inputBox}>
-                <TextInput
-                  style={styles.submit}
-                  placeholder="password"
-                  placeholderTextColor="black"
-                  value={this.state.password}
-                />
-              </View>
-              <View style={styles.inputBox}>
-                <TextInput
-                  style={styles.submit}
-                  placeholder="confirm password"
-                  placeholderTextColor="black"
-                  value={this.state.confirmPassword}
                 />
               </View>
               <TouchableHighlight
