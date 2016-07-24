@@ -13,7 +13,7 @@ const styles = require('../styles/Tile.style.js');
 
 const Tile = (props) => (
 	<View>
-	  <View style={styles.container}>
+	  <View style={styles.container, {backgroundColor: props.color}}>
 	    <View>
         <Text style={styles.text}>Act: {props.name}</Text>
         <Text style={styles.text}>Location: {props.location}</Text>

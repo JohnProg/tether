@@ -18,19 +18,6 @@ class ArtistsMain extends Component {
     };
   }
 
-  componentWillMount(){
-    this.fetchData();
-  }
-
-  fetchData(){
-    fetch('http://107.170.231.229:8000/getAllEvents').then((response) => {
-      // console.log(JSON.parse(response._bodyInit).events);
-      const schedule = JSON.parse(response._bodyInit).events;
-      this.setState({schedule});
-      console.log(this.state.schedule);
-    }).done()
-  }
-
   render() {
     return (
       <View>
@@ -39,7 +26,7 @@ class ArtistsMain extends Component {
             <Text>Artist</Text>
           </View>
           <View style={styles.inputs}>
-            <HypeList schedule={this.state.schedule}/>
+            <HypeList/>
           </View>
         </View>
       </View>
