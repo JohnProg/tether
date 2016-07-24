@@ -9,6 +9,7 @@ import {
 /* eslint-disable react/prop-types */
 const styles = require('../styles/Signup.style.js');
 const TabMain = require('./TabMain.js');
+const ArtistsMain = require('./ArtistsMain.js');
 
 class Signup extends Component {
 
@@ -22,8 +23,8 @@ class Signup extends Component {
   handleGetHyped() {
     AlertIOS.prompt('Enter your name', null, () =>{
       this.props.navigator.push({
-        title: 'Tab Main',
-        component: TabMain,
+        title: 'Artist Main',
+        component: ArtistsMain,
         passProps: { navigator: this.props.navigator },
       });
     });  
