@@ -12,11 +12,11 @@ const deviceHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
 	container: {
-		flexWrap: 'wrap', 
-		alignItems: 'flex-start',
-		flexDirection:'row', 
-		justifyContent: 'space-around',
-		padding: 10,
+		// flexWrap: 'wrap', 
+		// alignItems: 'flex-start',
+		flexDirection: 'row', 
+		// justifyContent: 'space-around',
+		// padding: 10,
     width: deviceWidth / 1.5,
 	},
 	logoContainer: {
@@ -31,20 +31,35 @@ const styles = StyleSheet.create({
     marginLeft: 0,
     marginRight: 0,
   },
+  textContainer: {
+    width: deviceWidth / 3,
+    borderColor: 'white',
+    borderWidth: 0.5,
+  },
+  iconContainer: {
+    width: deviceWidth / 5,
+    borderColor: 'white',
+    borderWidth: 0.5,
+  },
   icon: {
   	color: 'white',
   	fontSize: 40,
-  	flexWrap: 'wrap', 
-    alignItems: 'flex-start',
-    flexDirection:'row',
+  	// flexWrap: 'wrap', 
+   //  alignItems: 'flex-start',
+   //  flexDirection:'row',
   },
-  text: {
+  title: {
+    fontSize: 30,
+    fontWeight: 'bold',
   	color: 'white',
+  },
+  subtitle: {
+    color: 'white',
   },
   listContainer: {
     width: deviceWidth / 1.2,
     alignSelf: 'center'
-  }
+  },
 });
 
 module.exports = styles;

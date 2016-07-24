@@ -7,6 +7,7 @@ import {
   TouchableHighlight
 } from 'react-native';
 
+import Icon from 'react-native-vector-icons/Ionicons';
 const styles = require('../styles/ArtistPage.style.js');
 
 const artist = {
@@ -26,8 +27,13 @@ class ArtistPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      
+      navigator: props.navigator,
     };
+    this.goBack = this.goBack.bind(this);
+  }
+
+  goBack() {
+    this.props.navigator.pop();
   }
 
   render() {
@@ -37,6 +43,11 @@ class ArtistPage extends Component {
 	        style={styles.artistImage}
 	        source={{uri: artist.image}}
 	      >
+          <View style={styles.iconContainer}>
+            <TouchableHighlight onPress={this.goBack} underlayColor='transparent'>
+              <Icon name="ios-arrow-back" style={styles.icon}/>
+            </TouchableHighlight>
+          </View>
           <View style={styles.logoContainer}>
             <Image
               style={styles.logo}

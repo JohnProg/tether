@@ -25,7 +25,8 @@ class HypeList extends Component {
     super(props);
     this.state = {
       ds: null,
-      loaded: false
+      loaded: false,
+      navigator: props.navigator,
     }
     this.updateInformation = this.updateInformation.bind(this);
   }

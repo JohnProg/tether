@@ -7,7 +7,7 @@ import {
   TouchableHighlight
 } from 'react-native';
 
-const styles = require('../styles/FoodMain.style.js');
+const styles = require('../styles/ArtistsMain.style.js');
 const HypeList = require('./HypeList');
 
 class ArtistsMain extends Component {
@@ -15,9 +15,12 @@ class ArtistsMain extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      schedule: null
+      schedule: null,
+      navigator: props.navigator,
     };
   }
+
+
 
   render() {
     return (
@@ -32,10 +35,9 @@ class ArtistsMain extends Component {
               style={styles.logo}
               source={require('./../images/0_SIGN_UP/OUTHYPE_LOGO.png')}
             />
-            <Text>Artist</Text>
           </View>
           <View style={styles.inputs}>
-            <HypeList/>
+            <HypeList navigator={this.state.navigator}/>
           </View>
         </View>
       </View>

@@ -26,8 +26,17 @@ const styles = StyleSheet.create({
 	logoContainer: {
 	  width: deviceWidth,
 	  height: deviceHeight / 5.5,
-	  marginTop: deviceHeight / 60,
+	  marginTop: -deviceHeight / 12,
+	  marginLeft: deviceWidth / 1.55,
 	  // marginBottom: deviceHeight / 100,
+	},
+	iconContainer: {
+		marginLeft: deviceWidth / 20,
+		marginTop: deviceWidth / 20,
+	},
+	icon: {
+		color: 'white',
+		fontSize: 40,
 	},
 	logo: {
 	  marginTop: deviceHeight / 40,

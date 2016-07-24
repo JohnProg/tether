@@ -31,7 +31,6 @@ class FoodMain extends Component {
               style={styles.logo}
               source={require('./../images/0_SIGN_UP/OUTHYPE_LOGO.png')}
             />
-            <Text>Food</Text>
           </View>
           <View style={styles.inputs}>
 
