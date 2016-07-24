@@ -21,15 +21,13 @@ class Signup extends Component {
   }
 
   handleGetHyped() {
-    if (this.refs.username.value == null) {
-      AlertIOS.alert('Please type in a name');  
-    } else {
+    AlertIOS.prompt('Enter your name', null, () =>{
       this.props.navigator.push({
         title: 'Tab Main',
         component: TabMain,
         passProps: { navigator: this.props.navigator },
       });
-    }
+    });  
   }
 
   render() {
@@ -67,15 +65,6 @@ class Signup extends Component {
             <View style={styles.inputs}>
               <Text style={styles.title}>Free Account</Text>
               <Text style={styles.subtitle}>For everyone and their mothers</Text>
-              <View style={styles.inputBox}>
-                <TextInput
-                  style={styles.textUsername}
-                  ref="username"
-                  placeholder="username"
-                  placeholderTextColor="black"
-                  value={this.state.username}
-                />
-              </View>
               <TouchableHighlight
                 onPress={this.handleGetHyped}
                 style={styles.button}

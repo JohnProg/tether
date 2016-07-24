@@ -24,7 +24,7 @@ class Home extends Component {
     fetch(`http://107.170.231.229:8000/validation?deviceId=${DeviceInfo.getUniqueID()}`)
       .then(response => response.json())
         .then(responseData => {
-          if (!responseData.userInfo && responseData.userInfo.newUser === false) {
+          if (responseData.userInfo && responseData.userInfo.newUser === false) {
             this.props.navigator.push({
               title: 'Tab Main',
               component: TabMain,
