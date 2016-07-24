@@ -12,6 +12,8 @@ const styles = require('../styles/Tile.style.js');
 
 const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 
+import Icon from 'react-native-vector-icons/EvilIcons';
+
 let schedule;
 
 const colors = [
@@ -21,6 +23,7 @@ const colors = [
   'rgb(193, 14, 216)',
   'rgb(0, 209, 186)',
 ];
+let count = 0;
 
 class HypeList extends Component {
   constructor(props) {
@@ -56,17 +59,19 @@ class HypeList extends Component {
   }
 
   hotReload() {
-    this.updateInformation();
+    this.updateInformation(); 
   }
 
   generateColor() {
-    return colors[Math.floor(Math.random() * colors.length)];
+    if(count === 5){
+      count = 0;
+    }
+    return colors[Math.floor(count++)];
   }
   render() {
     if (this.state.loaded === false) {
       return (
         <View>
-          <Text>Loading</Text>
         </View>
       );
     }
