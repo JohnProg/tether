@@ -11,7 +11,7 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons';
 const styles = require('../styles/ArtistPage.style.js');
 
-const artist = {
+let artist = {
   image: 'http://berkeleybside.com/wp-content/uploads/2015/07/DSC_9912.jpg',
   name: 'J COLE',
   stage: 'Twin Peaks',
@@ -29,8 +29,32 @@ class ArtistPage extends Component {
     super(props);
     this.state = {
       navigator: props.navigator,
+      loading: true,
+      id: this.props.artistId,
     };
     this.goBack = this.goBack.bind(this);
+  }
+
+  componentDidMount() {
+    fetch(`http://107.170.231.229:8000/getSpecificEvent?id=${this.state.id}`)
+      .then(response => response.json())
+        .then(responseData => {
+          // console.error(responseData);
+          artist = {
+            stage: responseData.data.location,
+            name: responseData.data.name,
+            image: responseData.data.image,
+            genre: responseData.data.genre,
+            upvotes: responseData.data.upvotes,
+            events: responseData.data.events,
+            followers: responseData.data.followers,
+            album: responseData.data.album,
+            time: responseData.data.time,
+          };
+          this.setState({
+            loading: false,
+          });
+        });
   }
 
   goBack() {
@@ -38,6 +62,9 @@ class ArtistPage extends Component {
   }
 
   render() {
+    if (this.state.loading) {
+      return <View />;
+    }
     return (
       <View style={styles.artistContainer}>
         <Image
