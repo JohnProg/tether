@@ -12,38 +12,19 @@ const Login = require('./Login');
 
 class Home extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoading: false,
-    };
-  }
-
   handleTetherin() {
-    this.setState({
-      isLoading: true,
-    });
     this.props.navigator.push({
       title: 'Login',
       component: Login,
       passProps: { navigator: this.props.navigator },
     });
-    this.setState({
-      isLoading: false,
-    });
   }
 
   handleSignup() {
-    this.setState({
-      isLoading: true,
-    });
     this.props.navigator.push({
       title: 'Sign Up',
       component: Signup,
       passProps: { navigator: this.props.navigator },
-    });
-    this.setState({
-      isLoading: false,
     });
   }
 
@@ -59,7 +40,7 @@ class Home extends Component {
               <Text style={styles.buttonText}>Sign Up</Text>
             </TouchableHighlight>
             <TouchableHighlight onPress={this.handleTetherin.bind(this)} style={styles.button}>
-              <Text style={styles.buttonText}>Tether In</Text>
+              <Text style={styles.buttonText}>Login</Text>
             </TouchableHighlight>
           </View>
         </View>

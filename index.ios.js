@@ -1,3 +1,6 @@
+
+// import App from './app/components/App';
+
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -9,19 +12,16 @@ import {
 
 const Home = require('./app/components/Home');
 
-class tether extends Component {
-  render() {
-    return (
-      <NavigatorIOS
-        style={styles.container}
-        initialRoute={{
-          title: 'Home',
-          component: Home,
-        }}
-      />
-    );
-  }
-}
+const tether = () => (
+  <NavigatorIOS
+    style={styles.container}
+    initialRoute={{
+      title: 'Home',
+      component: Home,
+    }}
+  />
+);
+
 // navigationBarHidden={true}
 
 const styles = StyleSheet.create({
