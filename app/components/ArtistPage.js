@@ -10,7 +10,15 @@ import {
 const styles = require('../styles/ArtistPage.style.js');
 
 const artist = {
-	image: 'http://img.ulximg.com/image/300x300/artist/1392672262_cf16d585b9ffb2dda04554e21f237f49.jpg/6471d751ee61d1f3c953d9431bd395ec/1392672262_j_cole_featuring_jhene_aiko_sparks_will_fly_19.jpg'
+	image: 'http://berkeleybside.com/wp-content/uploads/2015/07/DSC_9912.jpg',
+  name: 'J COLE',
+  stage: 'Twin Peaks',
+  genre: 'HIP HOP',
+  upvotes: 7200,
+  events: 1,
+  followers: 5890,
+  album: 'Resurrected',
+  time: 'Friday, 840PM'
 }
 
 class ArtistPage extends Component {
@@ -27,8 +35,44 @@ class ArtistPage extends Component {
       <View style={styles.artistContainer}>
 	      <Image
 	        style={styles.artistImage}
-	        source={{ uri: artist.image }}
-	      />
+	        source={{uri: artist.image}}
+	      >
+          <Text style={styles.artistName}>{artist.name}</Text>
+          <Text style={styles.artistAlbum}>{artist.album}</Text>
+        </Image>
+        <View style={styles.whiteContainer}>
+          <Image
+            style={styles.whiteDiagonal}
+            source={require('./../images/1_FILL_INFO/WHITE_SHAPE.png')}
+          >
+          <Text style={styles.artistGenre}>{artist.genre}</Text>
+          <Text style={styles.artistStage}>{artist.stage}</Text>
+          <Text style={styles.artistTime}>{artist.time}</Text>
+          <View style={styles.thirdsContainer}>
+            <View style={styles.thirds}>
+              <Text style={styles.thirdsNum}>{artist.upvotes}</Text>
+              <Text style={styles.thirdsText}>Upvotes</Text>
+            </View>
+            <View style={styles.thirds}>
+              <Text style={styles.thirdsNum}>{artist.events}</Text>
+              <Text style={styles.thirdsText}>Events</Text>
+            </View>
+            <View style={styles.thirds}>
+              <Text style={styles.thirdsNum}>{artist.followers}</Text>
+              <Text style={styles.thirdsText}>Followers</Text>
+            </View>
+
+          </View>
+
+          <Text style={styles.trending}>
+            <Text>TRENDING</Text>
+            <Text style={{fontWeight: "bold"}}>COMMENTS</Text>
+          </Text>
+          <Text style={styles.comments}>#DOPE #OLDSCHOOL #WTF #ILLIN</Text>
+
+
+          </Image>
+        </View> 
       </View>
     );
   }

@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
 		flexDirection:'row', 
 		justifyContent: 'space-around',
 		padding: 10,
+    width: deviceWidth / 1.5,
 	},
 	logoContainer: {
 		width: deviceWidth,
@@ -39,6 +40,10 @@ const styles = StyleSheet.create({
   },
   text: {
   	color: 'white',
+  },
+  listContainer: {
+    width: deviceWidth / 1.2,
+    alignSelf: 'center'
   }
 });
 
