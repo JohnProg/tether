@@ -28,6 +28,9 @@ const styles = StyleSheet.create({
 	  width: deviceWidth / 4,
 	  height: deviceWidth / 12,
 	},
+	inputs:{
+		marginTop: -deviceHeight / 8,
+	}
 });
 
 module.exports = styles;
