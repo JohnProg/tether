@@ -47,7 +47,7 @@ class Tile extends Component {
     this.props.navigator.push({
       title: 'Artist',
       component: ArtistPage,
-      passProps: { navigator: this.props.navigator },
+      passProps: { artistId: this.state.id, navigator: this.props.navigator },
     });
   }
 
