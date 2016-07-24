@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 import {
-  Text,
+  AlertIOS,
   View,
   ListView,
 } from 'react-native';
@@ -32,13 +32,27 @@ class HypeList extends Component {
       ds: null,
       loaded: false,
       navigator: props.navigator,
+      throttle: false,
     };
     this.updateInformation = this.updateInformation.bind(this);
     this.hotReload = this.hotReload.bind(this);
+    this.throttle = this.throttle.bind(this);
   }
 
   componentDidMount() {
     this.updateInformation();
+  }
+
+  throttle() {
+    if (this.state.throttle) {
+      AlertIOS.alert('Woah slow down with the hype, Sparky!');
+      return false;
+    }
+    this.state.throttle = true;
+    setTimeout(() => {
+      this.state.throttle = false;
+    }, 5000);
+    return true;
   }
 
   updateInformation() {
@@ -82,6 +96,7 @@ class HypeList extends Component {
           dataSource={this.state.ds}
           renderRow={(rowData) =>
             <Tile
+              throttle={this.throttle}
               reload={this.hotReload}
               navigator={this.state.navigator}
               name={rowData.name}
