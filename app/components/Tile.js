@@ -4,7 +4,6 @@ import {
   Text,
   View,
   TouchableHighlight,
-  Animated,
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -30,19 +29,21 @@ class Tile extends Component {
   }
 
   upVote() {
-    fetch('http://107.170.231.229:8000/hypeCount', {
-      method: 'POST',
-      body: JSON.stringify({
-        Hypee: this.state.id,
-        timestamp: Date.now(),
-      }),
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-    }).then(() => {
-      this.props.reload();
-    });
+    if (this.props.throttle()) {
+      fetch('http://107.170.231.229:8000/hypeCount', {
+        method: 'POST',
+        body: JSON.stringify({
+          Hypee: this.state.id,
+          timestamp: Date.now(),
+        }),
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      }).then(() => {
+        this.props.reload();
+      });
+    }
   }
   goToArtistPage() {
     this.props.navigator.push({
