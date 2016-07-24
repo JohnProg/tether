@@ -62,7 +62,7 @@ class Tile extends Component {
   render(){
   	return (
 			<View>
-			  <View style={styles.container, {backgroundColor: this.state.color}}>
+			  <View style={styles.container, {backgroundColor: this.state.color, flexDirection: 'row'}}>
 			    <View style={styles.textContainer}>
 		        <Text style={styles.title}>{this.state.name}</Text>
 		        <Text style={styles.subtitle}>{this.state.location} | {this.state.startTime} | {this.state.hypes} Hypes</Text>
@@ -78,7 +78,6 @@ class Tile extends Component {
 		        </TouchableHighlight>
 		      </View>
 		    </View>
-		    <View style={styles.hr}/>
 		  </View>
 	  )
   }

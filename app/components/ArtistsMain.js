@@ -21,7 +21,6 @@ class ArtistsMain extends Component {
   }
 
 
-
   render() {
     return (
       <Image
