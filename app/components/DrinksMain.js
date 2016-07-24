@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 
 const styles = require('../styles/DrinksMain.style.js');
+const HypeList = require('./HypeList');
 
 class DrinksMain extends Component {
 
@@ -31,6 +32,10 @@ class DrinksMain extends Component {
               style={styles.logo}
               source={require('./../images/0_SIGN_UP/OUTHYPE_LOGO.png')}
             />
+            <Text>Drinks</Text>
+          </View>
+          <View style={styles.inputs}>
+            <HypeList />
           </View>
         </View>
       </View>
