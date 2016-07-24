@@ -10,17 +10,17 @@ import {
 const Tile = require('./Tile');
 
 class HypeList extends Component {
-  
-	render(){
-		return (
-      <View>
-        <Text>HypeList</Text>
-        <ul>
-           <Tile />
-        </ul>
-      </View>
+  constructor(props){
+    super(props);
+  }
+  componentDidMount(){
+    console.log('woot', this.props);
+  }
+  render(){
+    return(
+      <Tile />
 		);
-	}
+  }
 }
 
 module.exports = HypeList;
