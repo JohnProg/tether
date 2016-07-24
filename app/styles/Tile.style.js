@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   listContainer: {
     width: deviceWidth / 1.2,
     alignSelf: 'center',
-    height: deviceHeight / 1.5,
+    height: deviceHeight / 1.3,
     shadowColor: '#000000',
     shadowOpacity: 0.8,
     shadowRadius: 2,

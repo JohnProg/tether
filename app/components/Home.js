@@ -9,6 +9,7 @@ import {
 const styles = require('../styles/Home.style.js');
 const Signup = require('./Signup.js');
 const TabMain = require('./TabMain.js');
+const ArtistsMain = require('./ArtistsMain.js');
 const DeviceInfo = require('react-native-device-info');
 
 /* eslint-disable react/prop-types */
@@ -26,8 +27,8 @@ class Home extends Component {
         .then(responseData => {
           if (responseData.userInfo && responseData.userInfo.newUser === false) {
             this.props.navigator.push({
-              title: 'Tab Main',
-              component: TabMain,
+              title: 'Artists Main',
+              component: ArtistsMain,
               passProps: { navigator: this.props.navigator },
             });
           } else {
