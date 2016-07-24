@@ -10,6 +10,9 @@ import {
 
 const Tile = require('./Tile');
 
+const styles = require('../styles/HypeList.style.js');
+
+
 const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
 const colors = ['rgb(149, 27, 245)', 'rgb(255, 0, 205)', 'rgb(131, 139, 186)', 'rgb(193, 14, 216)', 'rgb(0, 209, 186)'];
@@ -41,8 +44,10 @@ class HypeList extends Component {
       )
     } else{
       return(
-        <ListView dataSource={this.state.ds}
-      renderRow={(rowData) => <Tile name={rowData.name} location={rowData.location} hypes={rowData.hypes} color={this.generateColor()}/>} />
+        <View style={styles.list}>
+          <ListView style={styles.list} dataSource={this.state.ds}
+      renderRow={(rowData) => <Tile name={rowData.name} location={rowData.location} id={rowData.id} hypes={rowData.hypes} color={this.generateColor()} startTime={rowData.start_time} endTime={rowData.end_time} description={rowData.description} />} />
+      </View>
   		);
     }
   }
