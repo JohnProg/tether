@@ -8,7 +8,7 @@ import {
 
 const styles = require('../styles/Login.style.js');
 
-class Login extends Component {
+class ArtistsMain extends Component {
 
   constructor(props) {
     super(props);
@@ -33,4 +33,4 @@ class Login extends Component {
   }
 }
 
-module.exports = Login;
+module.exports = ArtistsMain;

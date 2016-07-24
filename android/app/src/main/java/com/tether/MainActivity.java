@@ -1,6 +1,8 @@
 package com.tether;
 
 import com.facebook.react.ReactActivity;
+import com.oblador.vectoricons.VectorIconsPackage;
+import com.reactnativenavigation.RnnPackage;
 
 public class MainActivity extends ReactActivity {
 
