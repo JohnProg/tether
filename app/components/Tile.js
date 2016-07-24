@@ -4,6 +4,7 @@ import {
   Text,
   View,
   TouchableHighlight,
+  Animated,
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -62,12 +63,15 @@ class Tile extends Component {
         >
           <View style={styles.textContainer}>
             <Text style={styles.title}>{this.state.name}</Text>
-            <Text style={styles.subtitle}>{this.state.location} | {this.state.startTime}</Text>
-            <Text style={styles.subtitle}>{this.state.hypes} Hypes</Text>
+            <Text style={styles.subtitle}> @ {this.state.location} | {this.state.startTime}</Text>
+            
           </View>
           <View style={styles.iconContainer}>
             <TouchableHighlight onPress={this.upVote} underlayColor="transparent">
+              <View>
+              <Text style={styles.subtitle}>{this.state.hypes} Hypes</Text>
               <Icon name="ios-thumbs-up" style={styles.icon} />
+              </View>
             </TouchableHighlight>
           </View>
           <View style={styles.iconContainer}>
